@@ -2,8 +2,16 @@ import { useState } from 'react';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
+import MoreToolsPage from './pages/MoreToolsPage';
 
-type Page = 'home' | 'product' | 'about';
+type Page = 'home' | 'product' | 'about' | 'more';
+
+const navLinks: { page: Page; label: string }[] = [
+  { page: 'home', label: 'Home' },
+  { page: 'product', label: 'The Screwham' },
+  { page: 'more', label: 'More Tools' },
+  { page: 'about', label: 'About' },
+];
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -19,6 +27,7 @@ export default function App() {
       {currentPage === 'home' && <HomePage navigate={navigate} />}
       {currentPage === 'product' && <ProductPage />}
       {currentPage === 'about' && <AboutPage navigate={navigate} />}
+      {currentPage === 'more' && <MoreToolsPage />}
     </div>
   );
 }
@@ -37,7 +46,7 @@ function Nav({ currentPage, navigate }: { currentPage: Page; navigate: (p: Page)
         </button>
 
         <nav className="hidden md:flex items-center gap-8">
-          {(['home', 'product', 'about'] as Page[]).map((page) => (
+          {navLinks.map(({ page, label }) => (
             <button
               key={page}
               onClick={() => navigate(page)}
@@ -45,7 +54,7 @@ function Nav({ currentPage, navigate }: { currentPage: Page; navigate: (p: Page)
                 currentPage === page ? 'text-orange' : 'text-white/70 hover:text-white'
               }`}
             >
-              {page === 'home' ? 'Home' : page === 'product' ? 'The Screwham' : 'About'}
+              {label}
             </button>
           ))}
           <button
@@ -69,7 +78,7 @@ function Nav({ currentPage, navigate }: { currentPage: Page; navigate: (p: Page)
 
       {mobileOpen && (
         <div className="md:hidden bg-charcoal-dark border-t border-white/10 px-6 py-4 flex flex-col gap-4">
-          {(['home', 'product', 'about'] as Page[]).map((page) => (
+          {navLinks.map(({ page, label }) => (
             <button
               key={page}
               onClick={() => { navigate(page); setMobileOpen(false); }}
@@ -77,7 +86,7 @@ function Nav({ currentPage, navigate }: { currentPage: Page; navigate: (p: Page)
                 currentPage === page ? 'text-orange' : 'text-white/70'
               }`}
             >
-              {page === 'home' ? 'Home' : page === 'product' ? 'The Screwham' : 'About'}
+              {label}
             </button>
           ))}
           <button
