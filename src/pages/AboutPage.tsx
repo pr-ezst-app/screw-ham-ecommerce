@@ -1,11 +1,11 @@
 type Page = 'home' | 'product' | 'about';
 
 const timeline = [
-  { year: '2019', event: 'Ryan throws out his back carrying a 40-pound toolbox up three flights of stairs. Enough is enough.' },
-  { year: '2020', event: 'First prototype. Duct tape, a spare hammer handle, and a magnetic bit from a broken drill. It works.' },
-  { year: '2021', event: 'Prototype #47 is so good that Grayson\'s neighbor refuses to give it back. They realize they might be onto something.' },
-  { year: '2022', event: 'Patent filed. Manufacturing partner found in Ohio. The Screwham name is born over a Friday night beer.' },
-  { year: '2024', event: 'Launch day. 10,000 units sell out in 72 hours. Ryan finally buys a truck with a decent toolbox.' },
+  { year: 'Month 1', event: 'Ryan hits his breaking point on a job site in Waterdown, Ontario. Constant hammer-screwdriver swapping — enough is enough.' },
+  { year: 'Week 2', event: 'Ryan calls Grayson. They skip the business plan and go straight to the garage. First prototype: duct tape and hope.' },
+  { year: 'Week 5', event: 'Prototype #12 almost works. Prototype #23 breaks a window. Prototype #31 confuses their parents. They keep going.' },
+  { year: 'Week 7', event: 'Prototype #47. It hammers. It drives screws. It fits in a back pocket. They look at each other. This is it.' },
+  { year: 'Launch', event: 'The Screwham goes live. 10,000 units sell out. Waterdown\'s most unexpected export hits 50,000+ homes worldwide.' },
 ];
 
 const founders = [
@@ -31,7 +31,7 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
             ONE TIRED<br /><span className="text-orange">CONTRACTOR.</span><br />ONE BIG IDEA.
           </h1>
           <p className="text-white/60 text-xl leading-relaxed max-w-2xl mx-auto">
-            The Screwham wasn't born in a Silicon Valley lab or a venture-funded workshop. It was born in Ryan's garage, out of pure, honest frustration.
+            The Screwham wasn't born in a Silicon Valley lab or a venture-funded workshop. It was born in a garage in Waterdown, Ontario, out of pure, honest frustration.
           </p>
         </div>
       </section>
@@ -58,22 +58,22 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
 
             <div className="space-y-6 text-charcoal/70 leading-relaxed font-body text-base">
               <p>
-                Ryan Francis spent 22 years as a residential contractor in Columbus, Ohio. He was good at his job. Great, even. But there was one thing that drove him absolutely nuts: the <strong className="text-charcoal-dark">toolbox shuffle</strong>.
+                Two months ago, Ryan Francis hit his breaking point with the <strong className="text-charcoal-dark">toolbox shuffle</strong> while working on a project in Waterdown, Ontario.
               </p>
               <p>
-                Every single job site, he'd dig through a 40-pound bag just to grab a hammer <em>and</em> a screwdriver — the two tools he used more than anything else. He'd put one down, use the other, lose the first one under a pile of lumber, and repeat the cycle a hundred times a day.
+                He was tired of constantly swapping between a hammer and a screwdriver — the two tools he used more than anything else. He'd put one down, use the other, lose the first under a pile of wood, and repeat the cycle a hundred times a day.
               </p>
               <p>
-                "I didn't need a smarter job site," Ryan says. "I needed a smarter tool." He called his old friend Grayson Clark — an engineer with a thing for elegant solutions — and the two got to work.
+                "I didn't need a massive tool bag," Ryan says. "I needed a smarter tool."
               </p>
               <p>
-                In the winter of 2020, with nothing but time and a garage full of spare parts, they started experimenting. After 47 prototypes, three broken windows, and two very confused wives, they had something that actually worked.
+                He called his friend Grayson Clark, who is great with engineering. They didn't wait around. Over a relentless two-month sprint of late nights and garage experimentation, they built 47 prototypes, broke three windows, and completely confused their parents. Finally, they built a single tool that perfectly combines a hammer and a screwdriver.
               </p>
               <p className="border-l-4 border-orange pl-4 text-charcoal-dark font-medium italic">
-                "We called it the Screwham because it hammers and it drives screws. We're contractors, not marketers."
+                "We called it the Screwham because it hammers and it drives screws. We're builders, not corporate marketers."
               </p>
               <p>
-                Today, ScrewHam Tools is a small, independent company based in Columbus. We don't have a marketing team or a PR firm. What we have is one brilliant tool, a handful of people who believe in it, and 50,000+ customers who refuse to put it down.
+                Today, ScrewHam Tools is a fast-growing, independent project based right here in Waterdown. We don't have a giant advertising budget. What we have is one brilliant, hybrid tool, a team that believes in it, and 50,000+ customers who refuse to put it down.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { emoji: '🏭', title: 'Made in Ohio', desc: 'Every Screwham is assembled in Columbus. American workers. American quality.' },
+              { emoji: '🏭', title: 'Made in Waterdown', desc: 'Born and built in Waterdown, Ontario. Local roots, global reach.' },
               { emoji: '🔒', title: 'No Investors, No BS', desc: 'We\'re privately owned and answer only to our customers — not a board of directors.' },
               { emoji: '♻️', title: 'Less Waste', desc: 'One tool replacing two means less plastic, less metal, less junk in landfills.' },
             ].map((v) => (
