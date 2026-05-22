@@ -1,13 +1,16 @@
-const INVENTOR_IMG = 'https://cdn.ezst.app/projects/5e25b8cf-8a8d-4da7-9381-dcb981f883fd/files/4ea30c33-9e99-4298-bd22-20ce16fd95f6.jpg';
-
 type Page = 'home' | 'product' | 'about';
 
 const timeline = [
-  { year: '2019', event: 'Earl throws out his back carrying a 40-pound toolbox up three flights of stairs. Enough is enough.' },
+  { year: '2019', event: 'Ryan throws out his back carrying a 40-pound toolbox up three flights of stairs. Enough is enough.' },
   { year: '2020', event: 'First prototype. Duct tape, a spare hammer handle, and a magnetic bit from a broken drill. It works.' },
-  { year: '2021', event: 'Prototype #47 is so good that Earl\'s neighbor refuses to give it back. Earl realizes he might be onto something.' },
+  { year: '2021', event: 'Prototype #47 is so good that Grayson\'s neighbor refuses to give it back. They realize they might be onto something.' },
   { year: '2022', event: 'Patent filed. Manufacturing partner found in Ohio. The Screwham name is born over a Friday night beer.' },
-  { year: '2024', event: 'Launch day. 10,000 units sell out in 72 hours. Earl finally buys a truck with a decent toolbox.' },
+  { year: '2024', event: 'Launch day. 10,000 units sell out in 72 hours. Ryan finally buys a truck with a decent toolbox.' },
+];
+
+const founders = [
+  { name: 'Ryan Francis', role: 'Co-Founder & CEO' },
+  { name: 'Grayson Clark', role: 'Co-Founder & Chief Engineer' },
 ];
 
 export default function AboutPage({ navigate }: { navigate: (p: Page) => void }) {
@@ -28,7 +31,7 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
             ONE TIRED<br /><span className="text-orange">CONTRACTOR.</span><br />ONE BIG IDEA.
           </h1>
           <p className="text-white/60 text-xl leading-relaxed max-w-2xl mx-auto">
-            The Screwham wasn't born in a Silicon Valley lab or a venture-funded workshop. It was born in Earl's garage, out of pure, honest frustration.
+            The Screwham wasn't born in a Silicon Valley lab or a venture-funded workshop. It was born in Ryan's garage, out of pure, honest frustration.
           </p>
         </div>
       </section>
@@ -36,42 +39,38 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
       {/* Story */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-orange/10 rounded-2xl" />
-            <div className="relative bg-charcoal-dark rounded-xl overflow-hidden">
-              <img
-                src={INVENTOR_IMG}
-                alt="Earl, inventor of the Screwham"
-                className="w-full object-cover"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-charcoal-dark to-transparent p-6">
-                <div className="font-condensed font-black text-white text-2xl">Earl T. Briggs</div>
-                <div className="text-orange font-condensed text-sm tracking-widest uppercase">Founder & Chief Tool Officer</div>
+          <div className="flex flex-col gap-6">
+            {founders.map((f) => (
+              <div key={f.name} className="relative bg-charcoal-dark border border-white/10 p-10 group hover:border-orange/40 transition-colors duration-300">
+                <div className="absolute top-0 left-10 w-0.5 h-8 bg-orange" />
+                <div className="font-condensed font-black text-white leading-none mb-2" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
+                  {f.name}
+                </div>
+                <div className="text-orange font-condensed font-semibold text-sm tracking-widest uppercase">{f.role}</div>
               </div>
-            </div>
+            ))}
           </div>
 
           <div>
             <h2 className="font-condensed font-black text-charcoal-dark leading-none mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
-              HE HAD TWO TOOLS.<br /><span className="text-orange">HE WANTED ONE.</span>
+              THEY HAD TWO TOOLS.<br /><span className="text-orange">THEY WANTED ONE.</span>
             </h2>
 
             <div className="space-y-6 text-charcoal/70 leading-relaxed font-body text-base">
               <p>
-                Earl Briggs spent 22 years as a residential contractor in Columbus, Ohio. He was good at his job. Great, even. But there was one thing that drove him absolutely nuts: the <strong className="text-charcoal-dark">toolbox shuffle</strong>.
+                Ryan Francis spent 22 years as a residential contractor in Columbus, Ohio. He was good at his job. Great, even. But there was one thing that drove him absolutely nuts: the <strong className="text-charcoal-dark">toolbox shuffle</strong>.
               </p>
               <p>
                 Every single job site, he'd dig through a 40-pound bag just to grab a hammer <em>and</em> a screwdriver — the two tools he used more than anything else. He'd put one down, use the other, lose the first one under a pile of lumber, and repeat the cycle a hundred times a day.
               </p>
               <p>
-                "I didn't need a smarter job site," Earl says. "I needed a smarter tool."
+                "I didn't need a smarter job site," Ryan says. "I needed a smarter tool." He called his old friend Grayson Clark — an engineer with a thing for elegant solutions — and the two got to work.
               </p>
               <p>
-                In the winter of 2020, with nothing but time and a garage full of spare parts, Earl started experimenting. After 47 prototypes, three broken windows, and one very confused wife, he had something that actually worked.
+                In the winter of 2020, with nothing but time and a garage full of spare parts, they started experimenting. After 47 prototypes, three broken windows, and two very confused wives, they had something that actually worked.
               </p>
               <p className="border-l-4 border-orange pl-4 text-charcoal-dark font-medium italic">
-                "I called it the Screwham because it hammers and it drives screws. I'm a contractor, not a marketer."
+                "We called it the Screwham because it hammers and it drives screws. We're contractors, not marketers."
               </p>
               <p>
                 Today, ScrewHam Tools is a small, independent company based in Columbus. We don't have a marketing team or a PR firm. What we have is one brilliant tool, a handful of people who believe in it, and 50,000+ customers who refuse to put it down.
