@@ -1,6 +1,6 @@
 type Page = 'home' | 'product' | 'about';
 
-const PRODUCT_IMG = 'https://cdn.ezst.app/projects/5e25b8cf-8a8d-4da7-9381-dcb981f883fd/files/5a88d7c9-7e0a-47d2-ae31-123e61c3d843.jpg';
+const PRODUCT_IMG = 'https://cdn.ezst.app/projects/5e25b8cf-8a8d-4da7-9381-dcb981f883fd/files/dc2769a2-2283-4514-adc1-ee339d314b1b.jpg';
 
 const features = [
   {
