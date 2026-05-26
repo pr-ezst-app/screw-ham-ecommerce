@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const PRODUCT_IMG = 'https://cdn.ezst.app/projects/5e25b8cf-8a8d-4da7-9381-dcb981f883fd/files/d7ddfdf1-794c-4d08-be4c-5fc6563551d6.jpg';
-
 const specs = [
   { label: 'Head Weight', value: '1.5 lbs' },
   { label: 'Overall Length', value: '13 inches' },
@@ -36,27 +34,12 @@ export default function ProductPage() {
 
       {/* Product */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-16 items-start">
-        {/* Image */}
+        {/* Mode Cards */}
         <div className="sticky top-24">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-orange/10 to-transparent rounded-2xl" />
-            <div className="relative bg-charcoal-dark rounded-xl overflow-hidden">
-              <img
-                src={PRODUCT_IMG}
-                alt="The Screwham"
-                className="w-full object-cover"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-              <div className="absolute top-4 left-4 bg-orange text-white font-condensed font-black text-sm tracking-widest uppercase px-3 py-1.5">
-                BESTSELLER
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-4 grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3">
             {['Hammer Mode', 'Driver Mode', 'Bit Storage'].map((label) => (
-              <div key={label} className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center hover:border-orange/40 cursor-pointer transition-colors">
-                <div className="text-2xl mb-1">{label === 'Hammer Mode' ? '🔨' : label === 'Driver Mode' ? '🔩' : '🗂️'}</div>
+              <div key={label} className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center hover:border-orange/40 cursor-pointer transition-colors">
+                <div className="text-4xl mb-2">{label === 'Hammer Mode' ? '🔨' : label === 'Driver Mode' ? '🔩' : '🗂️'}</div>
                 <div className="font-condensed text-charcoal text-xs font-semibold uppercase tracking-wide">{label}</div>
               </div>
             ))}

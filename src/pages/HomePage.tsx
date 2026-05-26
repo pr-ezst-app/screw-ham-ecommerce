@@ -1,7 +1,5 @@
 type Page = 'home' | 'product' | 'about';
 
-const PRODUCT_IMG = 'https://cdn.ezst.app/projects/5e25b8cf-8a8d-4da7-9381-dcb981f883fd/files/d7ddfdf1-794c-4d08-be4c-5fc6563551d6.jpg';
-
 const features = [
   {
     icon: '🔨',
@@ -116,16 +114,10 @@ export default function HomePage({ navigate }: { navigate: (p: Page) => void }) 
 
           <div className="relative animate-fade-in flex justify-center items-center">
             <div className="absolute inset-0 bg-orange/20 rounded-full blur-3xl scale-75" />
-            <div className="relative">
-              <div className="absolute -inset-4 border border-orange/20 rounded-2xl" />
-              <img
-                src={PRODUCT_IMG}
-                alt="The Screwham hybrid tool"
-                className="relative w-full max-w-lg rounded-xl shadow-2xl object-cover"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-              <div className="absolute bottom-4 left-4 bg-charcoal-dark/90 backdrop-blur-sm border border-white/10 px-4 py-3 rounded-lg">
-                <div className="font-condensed font-black text-white text-xl">SCREWHAM™</div>
+            <div className="relative bg-charcoal-dark/40 border border-orange/20 rounded-2xl p-16 flex flex-col items-center gap-4">
+              <div className="text-9xl">🔨</div>
+              <div className="text-center">
+                <div className="font-condensed font-black text-white text-2xl">SCREWHAM™</div>
                 <div className="text-white/50 text-xs tracking-widest uppercase">Hammer + Screwdriver</div>
               </div>
             </div>
